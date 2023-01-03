@@ -2,14 +2,14 @@ from dependency_injector.containers import DeclarativeContainer
 from dependency_injector.providers import Singleton
 from app.configuration.ConfigurationCONF import ConfigurationCONF
 from app.connection.ConnectionSQLite import ConnectionSQLite
-from app.repository.RepositoryMusic import RepositoryMusic
-from app.service.ServiceMusic import ServiceMusic
+from app.repository.RepositorySQLite import RepositorySQLite
+from app.service.ServiceGrocery import ServiceGrocery
 
 
 class DependencyContainer(DeclarativeContainer):
 
     config = Singleton(ConfigurationCONF)
     connection = Singleton(ConnectionSQLite, config, "CONNECTION_SQLITE")
-    music_repository = Singleton(RepositoryMusic, connection)
-    service = Singleton(ServiceMusic, config, music_repository)
+    grocery_repository = Singleton(RepositorySQLite, connection)
+    service_grocery = Singleton(ServiceGrocery, config, grocery_repository)
 

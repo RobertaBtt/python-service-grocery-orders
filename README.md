@@ -1,26 +1,43 @@
-# Template - Small Python Service connection to a DB and Dependency Inversion
+# Python Service Frocery orders
+(built from adaptive-python-service)
+
+The output of this service is a list of dictionary.
+
+Each item/dictionary represents an order, for an item, for a day.
+
+An **order** is 
+- a collection of information about the item
+- when it can be ordered 
+- when it will be delivered
+- what’s the suggested retail price
+- what’s the profit margin
+- the purchase price, 
+- in which categories this item is in
+- any labels
+- how much there’s in a case of this stuff
+- how much they should order
+- how much do they have in the inventory.
+- 
+![sample_order_dict.jpg](static%2Fsample_order_dict.jpg)
+
+Order quantity =  
+(sales quantity prediction at delivery_day - the inventory quantity at ordering_day) / (amount of items in a case (case_content_quantity)).
 
 
+----------------------------------------------------------------
+From the **main**.py endpoint it is possible to call the services.
 
-Use this template everytime you want to quick set up a Python service.
-
-This template is able to read from a SQLite, for the moment, 
-and to read a configuration file.
-
-From the main.py endpoint it is possible to call the services.
-
-The service are available into the file services.py
 
 This projects follows the **Repository Pattern**.
 
 It is an abstraction over persistent storage.
 Hides the details of data access.
 
-
 In the dependency inversion the domain model is free from the Infrastructure concerns.
 
 Repository pattern is a simple abstraction
-around permanent storage. Repository gives you the illusion of a collection of in-memory objects.
+around permanent storage. 
+
 
 ![RepositoryPattern.jpg](static%2FRepositoryPattern.jpg)
 

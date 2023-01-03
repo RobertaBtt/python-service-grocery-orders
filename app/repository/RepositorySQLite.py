@@ -2,7 +2,7 @@ from app.repository.RepositoryAbstract import RepositoryAbstract
 from app.connection.ConnectionAbstract import ConnectionAbstract
 
 
-class RepositoryMusic(RepositoryAbstract):
+class RepositorySQLite(RepositoryAbstract):
 
     def __init__(self, connection: ConnectionAbstract):
         self.sql = connection
