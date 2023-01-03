@@ -1,4 +1,4 @@
-# Python Service Frocery orders
+# Python Service Grocery orders
 (built from adaptive-python-service)
 
 The output of this service is a list of dictionary.
