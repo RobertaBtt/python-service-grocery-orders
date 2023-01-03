@@ -17,13 +17,16 @@ An **order** is
 - how much there’s in a case of this stuff
 - how much they should order
 - how much do they have in the inventory.
-- 
+
+
+
 ![sample_order_dict.jpg](static%2Fsample_order_dict.jpg)
 
 Order quantity =  
 (sales quantity prediction at delivery_day - the inventory quantity at ordering_day) / (amount of items in a case (case_content_quantity)).
 
-
+---------------------------------------
+![database_diagram.jpg](static%2Fdatabase_diagram.jpg)
 ----------------------------------------------------------------
 From the **main**.py endpoint it is possible to call the services.
 

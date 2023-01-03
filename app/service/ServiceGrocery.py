@@ -25,6 +25,6 @@ class ServiceGrocery:
 
         query = __create_query__(file_query)
 
-        result = self.repository.read(query).fetchall()
+        result = self.repository.read(query)
 
         return result
