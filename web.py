@@ -6,17 +6,16 @@ app = DependencyContainer()
 app_name = app.config().get('APP', 'name')
 
 
-app = Flask(__name__)
+flask_app = Flask(__name__)
 
 
-@app.route('/')
+@flask_app.route('/')
 def landing():
+    result = app.service_grocery().get_all_orders()
+    return app.serializer().convert(result)
 
-    return '<p>Welcome to <b>' + app_name + '</b></p>'
 
-
-if __name__ == '__main__':
-    app.run(
+flask_app.run(
         host='0.0.0.0',
         port=8080
-    )
+)

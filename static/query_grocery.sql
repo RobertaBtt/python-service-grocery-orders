@@ -8,10 +8,11 @@ SELECT
 	orderable_items.profit_margin AS profit_margin,
 	orderable_items.purchase_price AS purchase_price,
 	orderable_items.item_categories AS item_categories,
+	orderable_items.extra_categories AS extra_categories,
 	orderable_items.tags AS labels,
 	orderable_items.case_content_quantity AS case_quantity,
 	orderable_items.case_content_unit AS case_unit,
-	((sales_predictions.sales_quantity - inventory.inventory) / orderable_items.case_content_quantity) AS order_quantity,
+	ceil((sales_predictions.sales_quantity - inventory.inventory) / orderable_items.case_content_quantity) AS order_quantity,
 	'CS' AS order_unit,
 	inventory.inventory AS inventory_quantity
 	
