@@ -84,6 +84,6 @@ Each layer is independent of the others._
 
 `python3 -m pytest tests/ -v`
 
-**Run main**
+**Run web app**
 
-`python3 main.py`
+`python3 web.py`
